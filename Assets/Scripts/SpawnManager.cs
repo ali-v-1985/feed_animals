@@ -33,7 +33,7 @@ public class SpawnManager : MonoBehaviour
     }
 
     private int _generatedAnimals;
-    private const int NumberOfAnimals = 10;
+    private const int NumberOfAnimals = 30;
 
     // Start is called before the first frame update
     void Start()

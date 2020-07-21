@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4581201223557350912}
   - component: {fileID: 1408314246453671526}
   - component: {fileID: 3699217068166353480}
+  - component: {fileID: 54950010472634294}
+  - component: {fileID: 4417199055887048135}
   m_Layer: 0
   m_Name: Food_Pizza_01
   m_TagString: Food
@@ -108,3 +110,32 @@ MonoBehaviour:
   highBounds: 35
   leftHorizontalBounds: -25
   rightHorizontalBounds: 25
+--- !u!54 &54950010472634294
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581201223555356864}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &4417199055887048135
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581201223555356864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4597009, y: 0.13234863, z: 0.55363166}
+  m_Center: {x: 0, y: 0, z: -0.0000001937151}

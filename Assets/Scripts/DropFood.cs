@@ -35,7 +35,7 @@ public class DropFood : MonoBehaviour
         }*/
         _food = foodsInventory[NextFoodIndex(0, foodsInventory.Length)];
         var playerPosition = transform.position;
-        Instantiate(_food, new Vector3(playerPosition.x, 2, playerPosition.z + 2), Quaternion.identity);
+        Instantiate(_food, new Vector3(playerPosition.x, 1, playerPosition.z + 2), Quaternion.identity);
     }
 
     private int NextFoodIndex(int min, int max)
