@@ -57,28 +57,34 @@ public class EatFood : MonoBehaviour
             var foodName = other.gameObject.name.Replace("(Clone)","");
             if (_foodAndNutrition.TryGetValue(foodName, out _value))
             {
-                _amountHasBeenEaten += _value;
-                Destroy(other.gameObject);
-                Debug.Log("Point +=");
-                howMuchToBeFed.value = _amountHasBeenEaten / howMuchFoodNeed;
-                if (_amountHasBeenEaten >= howMuchFoodNeed)
-                {
-                    var animalName = gameObject.name.Replace("(Clone)","");
-                    Destroy(gameObject);
-                    OnRaiseWellFedAnimalEvent(new WellFedAnimalEventArgs(animalName, howMuchFoodNeed));
-                }
+                Eat(other, _value);
             }
             else
             {
-                _value = 2;
-                _amountHasBeenEaten -= _value;
-                howMuchToBeFed.value = _amountHasBeenEaten / howMuchFoodNeed;
-                Destroy(other.gameObject);
-                Debug.Log("Point -1");
+                GetSick();
             }
         }
     }
-    
+
+    private void GetSick()
+    {
+        _amountHasBeenEaten -= 2;
+        howMuchToBeFed.value = _amountHasBeenEaten / howMuchFoodNeed;
+    }
+
+    private void Eat(Collider other, float _foodNutrition)
+    {
+        _amountHasBeenEaten += _foodNutrition;
+        Destroy(other.gameObject);
+        howMuchToBeFed.value = _amountHasBeenEaten / howMuchFoodNeed;
+        if (_amountHasBeenEaten >= howMuchFoodNeed)
+        {
+            var animalName = gameObject.name.Replace("(Clone)", "");
+            OnRaiseWellFedAnimalEvent(new WellFedAnimalEventArgs(animalName, howMuchFoodNeed));
+            Destroy(gameObject);
+        }
+    }
+
     [Serializable]
     public struct FoodAndNutrition
     {

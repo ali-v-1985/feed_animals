@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropFood : MonoBehaviour
+public class ThrowFood : MonoBehaviour
 {
     public GameObject[] foodsInventory;
 
@@ -26,13 +26,6 @@ public class DropFood : MonoBehaviour
 
     private void Drop()
     {
-        /*_preparedFoods[0] = foodsInventory[NextFoodIndex(0, foodsInventory.Length)];
-        _preparedFoods[1] = foodsInventory[NextFoodIndex(0, foodsInventory.Length)];
-        _preparedFoods[2] = foodsInventory[NextFoodIndex(0, foodsInventory.Length)];
-        for (var i = 0; i < _preparedFoods.Length; i++)
-        {
-            Instantiate(_preparedFoods[i], new Vector3(15 * (i - 1), 5, -7), Quaternion.identity);
-        }*/
         _food = foodsInventory[NextFoodIndex(0, foodsInventory.Length)];
         var playerPosition = transform.position;
         Instantiate(_food, new Vector3(playerPosition.x, 1, playerPosition.z + 2), Quaternion.identity);
