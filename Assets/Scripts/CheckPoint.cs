@@ -43,7 +43,6 @@ public class CheckPoint : MonoBehaviour
 
     void HandleWellFedAnimalEvent(object sender, WellFedAnimalEventArgs e)
     {
-        Debug.Log(string.Format("Animal {0} is feed {1} food", e.AnimalName, e.AnimalPoint));
         _point = (int) (Int32.Parse(pointText.text) + e.AnimalPoint);
         pointText.text = _point.ToString();
     }
